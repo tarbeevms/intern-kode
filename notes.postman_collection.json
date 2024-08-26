@@ -1,0 +1,1243 @@
+{
+	"info": {
+		"_postman_id": "656914aa-bdf1-4eb4-82ff-7c2566a8f424",
+		"name": "notes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34862938"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "586349",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "admin:admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "586349",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:23:04 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "137"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzE1NjR9.0OQZfS0Rl1bPNc1P89R7NLdnEJE7Xr3iswJTS169f00\"\n}"
+				},
+				{
+					"name": "плохой username/pass",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "586349",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:29:06 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"invalid username or password\"\n}"
+				},
+				{
+					"name": "bad request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "586349",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": 123,\r\n    \"password\": \"admin111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:29:26 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "25"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Bad Request\"\n}"
+				},
+				{
+					"name": "user123:user321",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user123\",\r\n    \"password\": \"user321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:37:04 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "140"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoidXNlcjEyMyIsImV4cCI6MTcyNDY3MjQwNH0.NPuyo4RJuHfRDjSh5RGi-mjAUtNw1Tj3psKzC3XhE0s\"\n}"
+				}
+			]
+		},
+		{
+			"name": "create note",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2MzIyNTV9.7cA_UMAka6K4z22RDE0J65N6yu8C8AxFkYbmkehgRmw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"пошол дожд\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/note",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"note"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "английский",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzE1NjR9.0OQZfS0Rl1bPNc1P89R7NLdnEJE7Xr3iswJTS169f00",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"fargot to pash the dooor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/note",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:23:50 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"9b4bde12-c406-442f-a432-d53addc74748\",\n    \"text\": \"forget to push the door\",\n    \"author\": \"admin\",\n    \"created_at\": \"2024-08-26T11:23:50.628411547Z\",\n    \"updated_at\": \"2024-08-26T11:23:50.628411607Z\"\n}"
+				},
+				{
+					"name": "русский",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzE4MjJ9.M4neP_w91xW-cxg2T5DW5vHJUb1Mc8TTiOxu7jA0py8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"пошол дожд\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/note",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:28:39 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"5f0f03b5-60dc-4214-966d-0682d99d646f\",\n    \"text\": \"пошел дождь\",\n    \"author\": \"admin\",\n    \"created_at\": \"2024-08-26T11:28:39.442048339Z\",\n    \"updated_at\": \"2024-08-26T11:28:39.442048389Z\"\n}"
+				},
+				{
+					"name": "истекшая сессия",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzE4MjJ9.M4neP_w91xW-cxg2T5DW5vHJUb1Mc8TTiOxu7jA0py8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"пошол дожд\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/note",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:32:18 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Not authorized: session expired\"\n}"
+				},
+				{
+					"name": "несуществующая сессия",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzE4MjJ9.M4neP_w91xW-cxg2T5DW5vHJUb1Mc8TTiOxu7jA0py8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"пошол дожд\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/note",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:32:25 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Not authorized: session not found\"\n}"
+				},
+				{
+					"name": "плохой токен",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzE4MjJ9.M4neP_w91xW-cxg2T5DW5vHJUb1Mc8TTiOxu7jA0p",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"пошол дожд\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/note",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:32:43 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Not authorized: illegal base64 data at input byte 40\"\n}"
+				},
+				{
+					"name": "неверный формат заголовка",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer1 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzE4MjJ9.M4neP_w91xW-cxg2T5DW5vHJUb1Mc8TTiOxu7jA0py8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"пошол дожд\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/note",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:32:58 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Not authorized, wrong header format\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update note",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2MjkwMzh9.CdzZ_mXkrBzV99rf4SyolWQ0SGP18z5JYPF6-L2ub1s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/note/605d75d8-0a98-4110-8d27-2258b4835e27",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"note",
+						"605d75d8-0a98-4110-8d27-2258b4835e27"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "некорректный ID",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzE1NjR9.0OQZfS0Rl1bPNc1P89R7NLdnEJE7Xr3iswJTS169f00",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/note/605d75d8-0a98-4110-8d27-2258b4835e27",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note",
+								"605d75d8-0a98-4110-8d27-2258b4835e27"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:24:16 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid note ID\"\n}"
+				},
+				{
+					"name": "неправильный токен",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzE1NjR9.0OQZfS0Rl1bPNc1P89R7NLdnEJE7Xr3iswJTS169f00eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzIyMTJ9.64q7pcz3-s46RzlFwbsZ14oo-jQ3CfmmK4BVYGu1Pog",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"дожд прекротился\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/note/5f0f03b5-60dc-4214-966d-0682d99d646f",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note",
+								"5f0f03b5-60dc-4214-966d-0682d99d646f"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:34:58 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Not authorized: token contains an invalid number of segments\"\n}"
+				},
+				{
+					"name": "update note",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzIyMTJ9.64q7pcz3-s46RzlFwbsZ14oo-jQ3CfmmK4BVYGu1Pog",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"дожд прекротился\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/note/5f0f03b5-60dc-4214-966d-0682d99d646f",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note",
+								"5f0f03b5-60dc-4214-966d-0682d99d646f"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:35:24 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "187"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"5f0f03b5-60dc-4214-966d-0682d99d646f\",\n    \"text\": \"дождь прекратился\",\n    \"author\": \"admin\",\n    \"created_at\": \"2024-08-26T11:28:39Z\",\n    \"updated_at\": \"2024-08-26T11:35:24.682051953Z\"\n}"
+				},
+				{
+					"name": "чужой юзер",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoidXNlcjEyMyIsImV4cCI6MTcyNDY3MjQwNH0.NPuyo4RJuHfRDjSh5RGi-mjAUtNw1Tj3psKzC3XhE0s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"дожд прекротился\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/note/5f0f03b5-60dc-4214-966d-0682d99d646f",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note",
+								"5f0f03b5-60dc-4214-966d-0682d99d646f"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:39:12 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No permission to update note\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get all user notes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2MzE4Njh9.r1uIrJph14QjBUqOWtYp6CdoJfUNyDL6qGEeSRB1XS0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/note",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"note"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "БД выключена",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzE1NjR9.0OQZfS0Rl1bPNc1P89R7NLdnEJE7Xr3iswJTS169f00",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/note",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:24:51 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "114"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Not authorized: failed to query session: dial tcp: lookup mysql on 127.0.0.11:53: server misbehaving\"\n}"
+				},
+				{
+					"name": "одна запись",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzE4MjJ9.M4neP_w91xW-cxg2T5DW5vHJUb1Mc8TTiOxu7jA0py8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/note",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:27:38 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "169"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"9b4bde12-c406-442f-a432-d53addc74748\",\n        \"text\": \"forget to push the door\",\n        \"author\": \"admin\",\n        \"created_at\": \"2024-08-26T11:23:51Z\",\n        \"updated_at\": \"2024-08-26T11:23:51Z\"\n    }\n]"
+				},
+				{
+					"name": "несколько записей",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzIyMTJ9.64q7pcz3-s46RzlFwbsZ14oo-jQ3CfmmK4BVYGu1Pog",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/note",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:34:11 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "335"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"9b4bde12-c406-442f-a432-d53addc74748\",\n        \"text\": \"forget to push the door\",\n        \"author\": \"admin\",\n        \"created_at\": \"2024-08-26T11:23:51Z\",\n        \"updated_at\": \"2024-08-26T11:23:51Z\"\n    },\n    {\n        \"id\": \"5f0f03b5-60dc-4214-966d-0682d99d646f\",\n        \"text\": \"пошел дождь\",\n        \"author\": \"admin\",\n        \"created_at\": \"2024-08-26T11:28:39Z\",\n        \"updated_at\": \"2024-08-26T11:28:39Z\"\n    }\n]"
+				},
+				{
+					"name": "ноль записей",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoidXNlcjEyMyIsImV4cCI6MTcyNDY3MzA0M30.SWV2lL26av1ifdVAyN6lyEV1YGKyFaZESxltMJ1CHJ8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/note",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:47:51 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				}
+			]
+		},
+		{
+			"name": "delete note",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2MjkzODZ9.k8hsQ_xGEWuFndN0fEKtttGNY86rJHPED4CQN-4Ac0E",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/note/605d75d8-0a98-4110-8d27-2258b4835e27",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"note",
+						"605d75d8-0a98-4110-8d27-2258b4835e27"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "несуществующая сессия",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NDEwMTl9.mCMR4arQx8WrA90NGD9YL0npyUqpKJcz-HBT_24es1g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/note/c0bd0bfe-01d2-4a58-802c-553839b9c42d",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note",
+								"c0bd0bfe-01d2-4a58-802c-553839b9c42d"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:22:45 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Not authorized: session not found\"\n}"
+				},
+				{
+					"name": "некорректный ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzIyMTJ9.64q7pcz3-s46RzlFwbsZ14oo-jQ3CfmmK4BVYGu1Pog",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/note/c0bd0bfe-01d2-4a58-802c-553839b9c42d",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note",
+								"c0bd0bfe-01d2-4a58-802c-553839b9c42d"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:35:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid note ID\"\n}"
+				},
+				{
+					"name": "delete note",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiYWRtaW4iLCJleHAiOjE3MjQ2NzIyMTJ9.64q7pcz3-s46RzlFwbsZ14oo-jQ3CfmmK4BVYGu1Pog",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/note/9b4bde12-c406-442f-a432-d53addc74748",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note",
+								"9b4bde12-c406-442f-a432-d53addc74748"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:36:02 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Deleted sucessfully\"\n}"
+				},
+				{
+					"name": "чужой юзер",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoidXNlcjEyMyIsImV4cCI6MTcyNDY3MjQwNH0.NPuyo4RJuHfRDjSh5RGi-mjAUtNw1Tj3psKzC3XhE0s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/note/5f0f03b5-60dc-4214-966d-0682d99d646f",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"note",
+								"5f0f03b5-60dc-4214-966d-0682d99d646f"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 Aug 2024 11:37:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No permission to delete note\"\n}"
+				}
+			]
+		}
+	]
+}
