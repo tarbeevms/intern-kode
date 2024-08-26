@@ -89,7 +89,6 @@ Content-Type: application/json
 {
     "text": "пошол дожд"
 }
-}
 ```
 Ответ, статус `200 Ok`:
 ```json
