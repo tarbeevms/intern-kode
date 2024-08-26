@@ -50,7 +50,7 @@ Host: localhost:8080
 Content-Type: application/json
 {
   "username": "admin",
-  "password": "presale"
+  "password": "admin"
 }
 ```
 Ответ, статус `200 Ok`: 
